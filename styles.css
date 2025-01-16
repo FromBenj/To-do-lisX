@@ -1,0 +1,21 @@
+#task-input {
+    border-radius: 10px;
+    border: solid #08946C thick;
+}
+#task-input:hover {
+    border-color: #3eedbc;
+    transition : 0.3s;
+}
+
+#add-button {
+    background-color: #08946D;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+}
+#add-button:hover {
+    background-color: #3eedbc;
+    transition : 0.3s;
+}
+
