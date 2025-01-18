@@ -13,22 +13,26 @@
 </head>
 
 <body>
-    <h1 class="text-center m-5">My to do list</h1>
+<h1 class="text-center m-5">My to do list</h1>
     <label for="task-input"></label>
     <input type="text"
-        name="task"
+        name="task_item"
         id="task-input"
         placeholder="New task...">
-    <button
+<button
         id="add-button"
-        hx-post="add_task.php"
+        hx-post="main.php"
         hx-include="#task-input"
         hx-target="#tasks-list"
         hx-trigger="click"
         hx-swap="beforeend">
         Add Task
     </button>
-    <div id="tasks-list"></div>
+    <div id="tasks-list">
+        <?php
+            require_once(__DIR__ . '/../src/list-tasks.php');
+        ?>
+    </div>
 </body>
 </html>
 
