@@ -1,6 +1,15 @@
+:root {
+    --main-green: #08946C;
+}
+
+
+.main-green-background {
+    background-color: var(--main-green);
+}
+
 #task-input {
     border-radius: 10px;
-    border: solid #08946C thick;
+    border: solid var(--main-green) thick;
 }
 
 #task-input:hover {
@@ -45,13 +54,17 @@
     border: none;
 }
 
+body {
+    transition: 1s;
+}
+
 .white-background {
     background-color: white;
 }
 
 .color-background {
     background: #FCB045FF;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
 }
 
 .dark-mode {
@@ -59,9 +72,20 @@
 }
 
 #background-choice option:checked {
-    background-color: #08946C;
+    background-color: var(--main-green);
     color: white;
 }
 
+/*Task done*/
+.task-done, .delete-task {
+    transition: transform 0.3s;
+}
 
+.task-done:hover, .delete-task:hover {
+    transform: scale(1.5);
+}
+
+.task-done {
+    color: var(--main-green);
+}
 
