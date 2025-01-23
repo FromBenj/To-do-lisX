@@ -2,9 +2,10 @@
     border-radius: 10px;
     border: solid #08946C thick;
 }
+
 #task-input:hover {
     border-color: #3eedbc;
-    transition : 0.3s;
+    transition: 0.3s;
 }
 
 #add-button {
@@ -14,8 +15,53 @@
     font-weight: bold;
     color: white;
 }
+
 #add-button:hover {
     background-color: #3eedbc;
-    transition : 0.3s;
+    transition: 0.3s;
 }
+
+#to-do-list-main-container {
+    margin: 0 30vw;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.task-in-list {
+    border: solid thin black;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+}
+
+/*Background choice*/
+
+#background-choice {
+    position: absolute;
+    right: 7rem;
+    top: 3rem;
+    max-width: 9rem;
+    border: none;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.color-background {
+    background: #FCB045FF;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.dark-mode {
+    background-color: black;
+}
+
+#background-choice option:checked {
+    background-color: #08946C;
+    color: white;
+}
+
+
 
