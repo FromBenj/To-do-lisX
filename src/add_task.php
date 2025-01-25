@@ -1,4 +1,5 @@
 <?php
+
 function addTask($db)
 {
     if ($db && isset($_POST['task_item']) && !empty($_POST['task_item'])) {
@@ -6,9 +7,11 @@ function addTask($db)
         $check = $db->prepare("INSERT INTO task (taskContent) VALUES (:taskContent)");
         $check->bindValue(':taskContent', $taskItem);
         $check->execute();
-        echo '<div class="task-in-list">' . $taskItem . '</div>';
+        echo "
+            <div class='task-in-list'>$taskItem</div>
+            <i class='task-done fa-solid fa-check'></i>
+        ";
     }
 }
-
 
 

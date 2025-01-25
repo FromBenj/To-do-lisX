@@ -1,8 +1,8 @@
+// Background change
 const values = ["white-background", "color-background", "dark-mode"];
-let body = document.body.classList ;
-body.add("white-background");
-let currentBackground = "white-background";
-console.log(currentBackground);
+let body = document.body.classList;
+body.add("color-background");
+let currentBackground = "color-background";
 const backgroundSelector = document.getElementById("background-choice");
 backgroundSelector.addEventListener('click', () => {
     let value = backgroundSelector.value;
@@ -21,3 +21,18 @@ backgroundSelector.addEventListener('click', () => {
         }
     }
 })
+
+// Task done
+const doneButtons = document.getElementsByClassName("task-done-container");
+for (let i = 0; i < doneButtons.length; i++) {
+    doneButtons[i].addEventListener("click", () => {
+        let siblings = doneButtons[i].parentNode.children;
+        for (let j = 0; i < siblings.length; i++) {
+            if (siblings[j].classList.contains("task-in-list")) {
+                !siblings[j].classList.contains("text-decoration-line-through") ?
+                    siblings[j].classList.add("text-decoration-line-through", "text-white", "main-green-background") :
+                    siblings[j].classList.remove("text-decoration-line-through", "text-white", "main-green-background");
+            }
+        }
+    })
+}
