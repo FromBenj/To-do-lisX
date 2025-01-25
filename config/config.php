@@ -1,6 +1,6 @@
 <?php
 
-function createDatabase()
+function getDatabase()
 {
     $dbPath = __DIR__ . '/../data/database.db';
     try {
@@ -13,9 +13,6 @@ function createDatabase()
                 taskContent TEXT NOT NULL
             )
         ');
-// Insert data
-        $db->exec("INSERT INTO task (taskContent) VALUES ('Manger du fromage')");
-
         return $db;
     } catch (SQLiteException $e) {
         echo 'SQLite3 Error: ' . $e->getMessage();

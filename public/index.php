@@ -14,11 +14,12 @@
 </head>
 
 <body>
+<?php require_once('main.php') ?>
 <div>
     <h1 id="to-do-title" class="m-5 text-center">My to do list</h1>
     <label for="background-choice"></label>
     <select id="background-choice" class="form-select">
-        <option selected disabled> background </option>
+        <option selected disabled> background</option>
         <option value="white-background">White</option>
         <option value="color-background">Colour</option>
         <option value="dark-mode">Dark</option>
@@ -39,15 +40,32 @@
             hx-include="#task-input"
             hx-target="#tasks-list"
             hx-trigger="click"
-            hx-swap="beforeend">
+            hx-swap="beforeend"
+    >
         Add Task
     </button>
-    <div id="tasks-list ">
-        <?php
-        require_once(__DIR__ . '/../src/list-tasks.php');
-        ?>
-    </div>
 </div>
+<div id="tasks-list">
+    <?php
+        $db = getDatabase();
+        listTasks($db);
+    ?>
+</div>
+<div id="delete-all-container">
+    <button
+            id="delete-all"
+            hx-post="main.php"
+            hx-trigger="click"
+            hx-vals='{"full_delete": "true"}'
+            hx-swap="beforeend"
+            hx-swap-oob="true"
+    >
+        Delete all tasks
+    </button>
+</div>
+
+
+
 <script src="script.js"></script>
 </body>
 </html>
