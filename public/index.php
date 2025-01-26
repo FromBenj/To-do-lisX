@@ -21,7 +21,6 @@
 require_once('main.php');
 ?>
 <div>
-    <h1 class="d-flex justify-content-center">Guillaume est un grop rappeur </h1>
     <h1 id="to-do-title" class="m-5 text-center">My to do list</h1>
     <label for="background-choice"></label>
     <select id="background-choice" class="form-select">
@@ -48,7 +47,7 @@ require_once('main.php');
                         hx-include="#task-input"
                         hx-target="#tasks-list"
                         hx-trigger="click"
-                        hx-swap="beforeend"
+                        hx-swap="afterbegin"
                 >
                     Add Task
                 </button>
