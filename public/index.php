@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To do list</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles.css"/>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,17 +33,17 @@ require_once('main.php');
 </div>
 <div class="container">
     <div class="row justify-content-center">
-        <div id="to-do-list-main-container" class="col-6 d-flex flex-column justify-content-center m-4">
-            <div class="bg-white mb-4">
+        <div id="to-do-list-main-container" class="col-12 col-lg-8 d-flex flex-column justify-content-center m-4">
+            <div class=" rounded p-4 d-flex flex-lg-row flex-column justify-content-center align-items-center">
                 <label for="task-input"></label>
                 <input type="text"
                        name="task_item"
                        id="task-input"
-                       class="mb-3 bg-white"
+                       class="bg-white mx-2"
                        placeholder="New task...">
                 <button
                         id="add-button"
-                        class="mb-4"
+                        class="my-lg-2 mt-2 mx-2"
                         hx-post="main.php"
                         hx-include="#task-input"
                         hx-target="#tasks-list"
@@ -52,7 +53,7 @@ require_once('main.php');
                     Add Task
                 </button>
             </div>
-            <div id="tasks-list" class="d-flex flex-column align-items-center bg-white">
+            <div id="tasks-list" class="rounded py-4 d-flex flex-column align-items-center bg-white">
                 <?php
                 $db = getDatabase();
                 listTasks($db);
@@ -74,8 +75,9 @@ require_once('main.php');
     </button>
 </div>
 
-
-<script src="script.js"></script>
+<script src="assets/js/background.js"></script>
+<script src="assets/js/add-input.js"></script>
+<script src="assets/js/task-done.js"></script>
 </body>
 </html>
 
