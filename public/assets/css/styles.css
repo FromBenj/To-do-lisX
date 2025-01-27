@@ -57,6 +57,21 @@ body {
     height: 100vh;
 }
 
+#date {
+    background-color: white;
+    border-radius: 15px;
+    border: solid var(--main-green-color) thick;
+    padding: 0.5rem;
+}
+
+#weekday {
+    border-bottom: solid thin;
+}
+
+#open-page-button {
+    cursor: pointer;
+}
+
 /*Background choice*/
 
 #background-choice {

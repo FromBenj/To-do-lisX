@@ -22,17 +22,23 @@
 require_once('main.php');
 ?>
 <div id="welcome-background" class="p-5 d-flex flex-column justify-content-between">
-    <div id="user-unknown" class="d-flex flex-column align-items-center">
-        <h1 id="greetings-header"class="mb-4">Hello !</h1>
-        <h2 class="mb-3">What's your name again?</h2>
-    <label for="new-user-name"></label>
-    <input type="text"
-           name="new_user_name"
-           id="new-user-name"
-           class="bg-white mx-2"
-           placeholder="Michael Jackson...">
+    <div id="user-container" class="d-flex flex-column align-items-center">
+        <h1 id="greetings-header" class="mb-4">Hello <span id="user-name"></span>!</h1>
+        <div id="new-user-container" class="d-flex flex-column justify-content-center">
+            <h2 class="mb-3">What's your name again?</h2>
+            <label for="new-user-name"></label>
+            <input type="text"
+                   name="new_user_name"
+                   id="new-user-name"
+                   class="bg-white mx-2 d-block"
+                   placeholder="Michael Jackson...">
+        </div>
     </div>
-    <div id="user-known">
+    <div class="d-flex flex-column align-items-center">
+        <div id="date" class="d-flex flex-column align-items-center justify-content-center">
+            <div id="weekday"></div>
+            <div id="date-number" class=" fw-bold"></div>
+        </div>
     </div>
     <div class="d-flex flex-column align-items-center">
         <h3>A good day starts always with a great dad joke:</h3>
@@ -96,6 +102,8 @@ require_once('main.php');
     </div>
 </div>
 
+<script src="assets/js/user-infos.js"></script>
+<script src="assets/js/date.js"></script>
 <script src="assets/js/dad-joke.js"></script>
 <script src="assets/js/background.js"></script>
 <script src="assets/js/add-input.js"></script>
