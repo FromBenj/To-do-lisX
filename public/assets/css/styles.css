@@ -44,6 +44,19 @@ body {
     width: 70%;
 }
 
+/* Welcome page */
+
+#greetings-header {
+    font-size: 6rem;
+}
+
+#welcome-background{
+    background-image: url("../images/welcome_background.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
 /*Background choice*/
 
 #background-choice {
@@ -90,5 +103,8 @@ body {
     #background-choice {
         right: 0;
         top: 0;
+    }
+    #greetings-header {
+        font-size: 4rem;
     }
 }
