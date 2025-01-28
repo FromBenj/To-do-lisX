@@ -21,29 +21,34 @@
 <?php
 require_once('main.php');
 ?>
-<div id="welcome-background" class="p-5 d-flex flex-column justify-content-between">
-    <div id="user-container" class="d-flex flex-column align-items-center">
-        <h1 id="greetings-header" class="mb-4">Hello <span id="user-name"></span>!</h1>
-        <div id="new-user-container" class="d-flex flex-column justify-content-center">
-            <h2 class="mb-3">What's your name again?</h2>
-            <label for="new-user-name"></label>
-            <input type="text"
-                   name="new_user_name"
-                   id="new-user-name"
-                   class="bg-white mx-2 d-block"
-                   placeholder="Michael Jackson...">
+<div id="welcome" class="welcome-background">
+    <div id="welcome-content" class="p-5 d-flex flex-column justify-content-between">
+        <div id="user-container" class="d-flex flex-column align-items-center">
+            <h1 id="greetings-header" class="mb-4">Hello <span id="user-name"></span>!</h1>
+            <div id="new-user-container" class="d-flex flex-column justify-content-center">
+                <h2 class="mb-3">What's your name again?</h2>
+                <label for="new-user-name"></label>
+                <input type="text"
+                       name="new_user_name"
+                       id="new-user-name"
+                       class="bg-white mx-2 d-block"
+                       placeholder="Michael Jackson...">
+            </div>
         </div>
-    </div>
-    <div class="d-flex flex-column align-items-center">
-        <div id="date" class="d-flex flex-column align-items-center justify-content-center">
-            <div id="weekday"></div>
-            <div id="date-number" class=" fw-bold"></div>
+        <div class="d-flex justify-content-center align-items-center">
+            <div id="date" class="mx-3  h5 d-flex flex-column align-items-center justify-content-center">
+                <div id="weekday"></div>
+                <div id="date-number" class="fw-bold"></div>
+            </div>
+            <div id="time" class="fw-bold h3 text-white"></div>
         </div>
-    </div>
-    <div class="d-flex flex-column align-items-center">
-        <h3>A good day starts always with a great dad joke:</h3>
-        <h4 id="dad-joke" class="fst-italic mb-5"></h4>
-        <p id="open-page-button">Let's go!</p>
+        <div class="d-flex flex-column align-items-center">
+            <h3>A good day always starts with a great dad joke:</h3>
+            <h4 id="dad-joke" class="fst-italic mb-5 text-white"></h4>
+            <div>
+                <h3 id="open-page-button" class="mt-5 mb-0">Let's go!</h3>
+            </div>
+        </div>
     </div>
 </div>
 <div id="to-do-list-page" class="d-none">

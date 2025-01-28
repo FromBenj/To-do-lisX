@@ -7,7 +7,6 @@ fetch('https://icanhazdadjoke.com/', {
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         const dadJoke = document.getElementById("dad-joke");
         dadJoke.innerHTML = data.joke;
     })
