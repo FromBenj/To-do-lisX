@@ -46,6 +46,14 @@ body {
 
 /* Welcome page */
 
+#new-user-name{
+    border-radius: 10px;
+    border-bottom: solid var(--main-green-color) thick;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
 #greetings-header {
     font-size: 6rem;
 }
@@ -54,8 +62,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     padding: 3rem;
     transform: translateX(0);
     opacity: 1;

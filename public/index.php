@@ -26,16 +26,16 @@ require_once('main.php');
         <div id="user-container" class="d-flex flex-column align-items-center">
             <h1 id="greetings-header" class="mb-4">Hello <span id="user-name"></span>!</h1>
             <div id="new-user-container" class="d-flex flex-column justify-content-center">
-                <h2 class="mb-3">What's your name again?</h2>
+                <h2>What's your name again?</h2>
                 <label for="new-user-name"></label>
                 <input type="text"
                        name="new_user_name"
                        id="new-user-name"
-                       class="bg-white mx-2 d-block"
+                       class="bg-white mx-2 d-block my-3 h4"
                        placeholder="Michael Jackson...">
             </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="my-5 d-flex justify-content-center align-items-center">
             <div id="date" class="mx-3  h5 d-flex flex-column align-items-center justify-content-center">
                 <div id="weekday"></div>
                 <div id="date-number" class="fw-bold"></div>
@@ -64,13 +64,13 @@ require_once('main.php');
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <div id="to-do-list-main-container" class="col-12 col-lg-8 d-flex flex-column justify-content-center m-4">
+            <div id="to-do-list-main-container" class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center m-4">
                 <div class=" rounded p-4 d-flex flex-lg-row flex-column justify-content-center align-items-center">
                     <label for="task-input"></label>
                     <input type="text"
                            name="task_item"
                            id="task-input"
-                           class="bg-white mx-2"
+                           class="bg-white mx-2 h4 mb-0"
                            placeholder="New task...">
                     <button
                             id="add-button"
@@ -84,7 +84,7 @@ require_once('main.php');
                         Add Task
                     </button>
                 </div>
-                <div id="tasks-list" class="rounded py-4 d-flex flex-column align-items-center bg-white">
+                <div id="tasks-list" class="rounded py-4 d-flex flex-column align-items-center bg-white w-100">
                     <?php
                     $db = getDatabase();
                     listTasks($db);
