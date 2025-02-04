@@ -1,8 +1,10 @@
-// get new user name
-const welcomePage = document.getElementById("welcome")
-const toDoPage = document.getElementById("to-do-list-page")
+//get new user name
+let welcomePage = document.getElementById("welcome")
+let toDoPage = document.getElementById("to-do-list-page")
+const newUserContainer = document.getElementById("new-user-container");
 const userNameInput = document.getElementById("new-user-name");
 const pageButton = document.getElementById("open-page-button");
+
 function newUserName() {
     const userName = userNameInput.value;
     localStorage.setItem('name', userName);
@@ -11,8 +13,8 @@ function newUserName() {
     toDoPage.classList.add("appear");
 }
 
-if (  !localStorage.getItem('name') || localStorage.getItem('name') === null) {
-       userNameInput.addEventListener("keypress", (event) => {
+if (!localStorage.getItem('name') || localStorage.getItem('name') === null) {
+    userNameInput.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
             newUserName();
         }
@@ -28,17 +30,15 @@ if (  !localStorage.getItem('name') || localStorage.getItem('name') === null) {
 }
 
 // welcome user
-
 function getUserConfig() {
-    const newUserContainer = document.getElementById("new-user-container");
     const userName = document.getElementById("user-name");
     userName.innerText = localStorage.getItem('name');
-    newUserContainer.classList.add("slide-out");
+    newUserContainer.classList.add("d-none");
     welcomePage.classList.replace("justify-content-between", "justify-content-around");
 }
 
 if (localStorage.getItem('name')) {
-getUserConfig();
+    getUserConfig();
     document.body.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
             newUserName();

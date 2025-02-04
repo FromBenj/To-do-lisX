@@ -12,11 +12,16 @@ function addTask($db)
         $selectLastTask->bindValue(':id', $lastTaskId);
         $result = $selectLastTask->execute();
         $lastTask = $result->fetchArray(SQLITE3_ASSOC);
+        $lastTaskId = $lastTask['id'];
+        $lastTaskContent = $lastTask['taskContent'];
         echo '
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="task-in-list" data-id="' . $lastTask['id'] . '">' . $lastTask['taskContent'] . '</div>
+        <div data-id= ' . $lastTaskId . ' class="container d-flex justify-content-center align-items-center">
+            <div class="task-in-list" > ' . $lastTask['taskContent'] . ' </div>
             <i class="task-done fa-solid fa-check ms-4 me-3"></i>
-            <i class="delete-task fa-solid fa-trash-can"></i>
+            <i 
+                id="delete-task-" 
+            class="delete-task fa-solid fa-trash-can">
+            </i>
         </div>';
     }
 }

@@ -44,7 +44,7 @@ require_once('main.php');
         </div>
         <div class="d-flex flex-column align-items-center">
             <h3>A good day always starts with a great dad joke:</h3>
-            <h4 id="dad-joke" class="fst-italic mb-5 text-white"></h4>
+            <h4 id="dad-joke" class="text-center fst-italic mb-5 text-white"></h4>
             <div>
                 <h3 id="open-page-button" class="mt-5 mb-0">Let's go!</h3>
             </div>
@@ -65,7 +65,7 @@ require_once('main.php');
     <div class="container">
         <div class="row justify-content-center">
             <div id="to-do-list-main-container" class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center m-4">
-                <div class=" rounded p-4 d-flex flex-lg-row flex-column justify-content-center align-items-center">
+                <div class=" rounded p-5 mb-5 d-flex flex-lg-row flex-column justify-content-center align-items-center">
                     <label for="task-input"></label>
                     <input type="text"
                            name="task_item"
@@ -84,7 +84,7 @@ require_once('main.php');
                         Add Task
                     </button>
                 </div>
-                <div id="tasks-list" class="rounded py-4 d-flex flex-column align-items-center bg-white w-100">
+                <div id="tasks-list" class="opacity-100 rounded py-4 d-flex flex-column align-items-center bg-white w-100">
                     <?php
                     $db = getDatabase();
                     listTasks($db);
@@ -93,14 +93,13 @@ require_once('main.php');
             </div>
         </div>
     </div>
-    <div id="delete-all-container">
+    <div id="delete-all-container" class="d-flex justify-content-center align-items-center">
         <button
                 id="delete-all"
-                hx-post="main.php"
+                hx-delete ="main.php"
                 hx-trigger="click"
                 hx-vals='{"full_delete": "true"}'
-                hx-swap="beforeend"
-                hx-swap-oob="true"
+                hx-swap="none"
         >
             Delete all tasks
         </button>
@@ -111,8 +110,10 @@ require_once('main.php');
 <script src="assets/js/date.js"></script>
 <script src="assets/js/dad-joke.js"></script>
 <script src="assets/js/background.js"></script>
+<script src="assets/js/prevent-welcome.js"></script>
 <script src="assets/js/add-input.js"></script>
 <script src="assets/js/task-done.js"></script>
+<script src="assets/js/delete-tasks.js"></script>
 </body>
 </html>
 

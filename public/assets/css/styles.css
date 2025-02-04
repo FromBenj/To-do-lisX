@@ -16,12 +16,18 @@ body {
     transition: 0.3s;
 }
 
-#add-button {
+#add-button, #delete-all {
     background-color: var(--main-green-color);
     border-radius: 10px;
     padding: 10px;
     font-weight: bold;
     color: white;
+}
+
+#delete-all {
+    padding: 6px;
+    background-color: black;
+    font-size: 13px;
 }
 
 #add-button:hover {
