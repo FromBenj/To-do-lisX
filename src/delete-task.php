@@ -6,10 +6,10 @@ function deleteAllTask($db)
 {
 
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-//        //Remove a task
-//        if (isset($_GET['data-id']) && !empty($_GET['data-id'])) {
-//            var_dump($_GET['data-id']);
-//        }
+        //Remove a task
+        if (isset($_GET['delete_id']) && !empty($_GET['delete_id'])) {
+            var_dump($_GET['delete_id']);
+        }
 
 
         //Remove all

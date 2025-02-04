@@ -160,6 +160,12 @@ body {
     color: var(--main-green-color);
 }
 
+.delete-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
     #background-choice {
         right: 0;
