@@ -12,17 +12,22 @@ function addTask($db)
         $selectLastTask->bindValue(':id', $lastTaskId);
         $result = $selectLastTask->execute();
         $lastTask = $result->fetchArray(SQLITE3_ASSOC);
-        $lastTaskId = $lastTask['id'];
-        $lastTaskContent = $lastTask['taskContent'];
         echo '
-        <div data-id= ' . $lastTaskId . ' class="container d-flex justify-content-center align-items-center">
-            <div class="task-in-list" > ' . $lastTask['taskContent'] . ' </div>
-            <i class="task-done fa-solid fa-check ms-4 me-3"></i>
-            <i 
-                id="delete-task-" 
-            class="delete-task fa-solid fa-trash-can">
-            </i>
-        </div>';
+            <div id="delete-container-' . $lastTask['id'] . '" class="container d-flex justify-content-center align-items-center">
+                <div class="task-in-list">' . $lastTask['taskContent'] . '</div>
+                <i class="task-done fa-solid fa-check ms-4 me-3"></i>
+                <button
+                id="delete-button-' . $lastTask['id'] . '"
+                class="delete-button"
+                hx-target="#delete-container-' . $lastTask['id'] . '"
+                hx-vals={"delete_id":' . $lastTask['id'] .'}
+                hx-delete ="main.php"
+                hx-trigger="click"
+                hx-swap="outerHTML"
+                >     
+                <i class="delete-task fa-solid fa-trash-can"></i>
+                </button>
+            </div>';
     }
 }
 

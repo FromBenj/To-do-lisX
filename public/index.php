@@ -52,8 +52,8 @@ require_once('main.php');
     </div>
 </div>
 <div id="to-do-list-page" class="d-none">
-    <div>
-        <h1 id="to-do-title" class="m-5 text-center">My to do list</h1>
+    <div class="m-5 flex-column d-flex justify-content-center align-items-center">
+        <h1 id="to-do-title" class="mb-0 text-center">My to do list</h1>
         <label for="background-choice"></label>
         <select id="background-choice" class="form-select">
             <option selected disabled> background</option>
