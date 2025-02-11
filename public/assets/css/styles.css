@@ -1,10 +1,21 @@
 :root {
     --main-green-color: #08946C;
+    --main-blue-color : #0A6883;
 }
 
 body {
     transition: background-color 0.3s ease-in-out;
 }
+
+/*Bootstrap update*/
+.opacity-0 {
+    opacity: 0;
+}
+
+.border-none {
+    border: none;
+}
+
 
 #task-input {
     border-radius: 10px;
@@ -95,9 +106,10 @@ body {
 
 #date {
     background-color: white;
-    border-radius: 15px;
+    border-radius: 40px;
     border: solid var(--main-green-color) thick;
-    padding: 1rem;
+    padding: 2rem;
+    font-size: 200%;
 }
 
 #weekday {
@@ -146,13 +158,23 @@ body {
     color: white;
 }
 
+/*Update task*/
+
+.outline-none {
+    outline: none;
+}
+
+.update-done {
+    color: var(--main-blue-color);
+}
+
 /*Task done*/
-.task-done, .delete-task {
+.task-done, .delete-task, .update-done{
     transition: transform 0.3s;
     cursor: pointer;
 }
 
-.task-done:hover, .delete-task:hover {
+.task-done:hover, .delete-task:hover, .update-done:hover {
     transform: scale(1.5);
 }
 

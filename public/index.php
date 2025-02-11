@@ -24,7 +24,7 @@ require_once('main.php');
 <div id="welcome" class="welcome-background">
     <div id="welcome-content" class="p-5 d-flex flex-column justify-content-between">
         <div id="user-container" class="d-flex flex-column align-items-center">
-            <h1 id="greetings-header" class="mb-4">Hello <span id="user-name"></span>!</h1>
+            <h1 id="greetings-header" class="mb-4 text-white">Hello <span id="user-name"></span>!</h1>
             <div id="new-user-container" class="d-flex flex-column justify-content-center">
                 <h2>What's your name again?</h2>
                 <label for="new-user-name"></label>
@@ -40,7 +40,7 @@ require_once('main.php');
                 <div id="weekday"></div>
                 <div id="date-number" class="fw-bold"></div>
             </div>
-            <div id="time" class="fw-bold h3 text-white"></div>
+            <div id="time" class="m-0 fw-bold h2 text-white"></div>
         </div>
         <div class="d-flex flex-column align-items-center">
             <h3>A good day always starts with a great dad joke:</h3>

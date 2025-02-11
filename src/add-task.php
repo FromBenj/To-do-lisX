@@ -13,13 +13,18 @@ function addTask($db)
         $result = $selectLastTask->execute();
         $lastTask = $result->fetchArray(SQLITE3_ASSOC);
         echo '
-            <div id="delete-container-' . $lastTask['id'] . '" class="container d-flex justify-content-center align-items-center">
+            <div id="task-container-' . $lastTask['id'] . '" 
+            class="container d-flex justify-content-center align-items-center"
+            hx-get = main.php
+            hx-trigger="dblclick"
+            hx-vals={"update_id":' . $lastTask['id'] .'}
+            >
                 <div class="task-in-list">' . $lastTask['taskContent'] . '</div>
                 <i class="task-done fa-solid fa-check ms-4 me-3"></i>
                 <button
                 id="delete-button-' . $lastTask['id'] . '"
                 class="delete-button"
-                hx-target="#delete-container-' . $lastTask['id'] . '"
+                hx-target="#task-container-' . $lastTask['id'] . '"
                 hx-vals={"delete_id":' . $lastTask['id'] .'}
                 hx-delete ="main.php"
                 hx-trigger="click"
