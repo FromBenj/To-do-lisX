@@ -12,3 +12,9 @@ document.addEventListener('htmx:load', () => {
         document.getElementById("task-input").value = "";
     })
 })
+
+const taskButton = document.getElementById("add-button");
+const tasksList = document.getElementById("tasks-list");
+taskButton.addEventListener('htmx:beforeRequest', () => {
+    tasksList.innerHTML="";
+})
