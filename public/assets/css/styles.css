@@ -11,6 +11,9 @@ body {
 .opacity-0 {
     opacity: 0;
 }
+.opacity-25 {
+    opacity: 25%;
+}
 
 .border-none {
     border: none;
@@ -168,6 +171,13 @@ body {
     color: var(--main-blue-color);
 }
 
+.update-button {
+    opacity: 0;
+    width: 26px;
+    height: 26px;
+    cursor: default !important;
+}
+
 /*Task done*/
 .task-done, .delete-task, .update-done{
     transition: transform 0.3s;
@@ -182,7 +192,7 @@ body {
     color: var(--main-green-color);
 }
 
-.delete-button {
+.delete-button, .done-button {
     border: none;
     background-color: transparent;
     cursor: pointer;

@@ -21,6 +21,7 @@
 <?php
 require_once('main.php');
 ?>
+<!--Welcome Page-->
 <div id="welcome" class="welcome-background">
     <div id="welcome-content" class="p-5 d-flex flex-column justify-content-between">
         <div id="user-container" class="d-flex flex-column align-items-center">
@@ -51,6 +52,7 @@ require_once('main.php');
         </div>
     </div>
 </div>
+<!--To Do List Page-->
 <div id="to-do-list-page" class="d-none">
     <div class="m-5 flex-column d-flex justify-content-center align-items-center">
         <h1 id="to-do-title" class="mb-0 text-center">My to do list</h1>
@@ -114,6 +116,7 @@ require_once('main.php');
 <script src="assets/js/add-input.js"></script>
 <script src="assets/js/task-done.js"></script>
 <script src="assets/js/delete-tasks.js"></script>
+<script src="assets/js/task-update.js"></script>
 </body>
 </html>
 
