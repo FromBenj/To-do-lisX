@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/../src/list-tasks.php');
 
 function updateTask($db)
 {
@@ -20,7 +21,16 @@ function updateTask($db)
         ';
     }
     //Updating the value
-    if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-        var_dump($_SERVER['GET']);
+    //POST instead of PUT for simplification
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['update_id'], $_POST['update_content']) && $_POST['update_content'] !== '') {
+            $updateId = $_POST['update_id'];
+            $updateContent = $_POST['update_content'];
+            $updateTask = $db->prepare("UPDATE task SET taskContent = :updateContent WHERE id = :id");
+            $updateTask->bindValue(':id', $updateId);
+            $updateTask->bindValue(':updateContent', $updateContent);
+            $updateTask->execute();
+        }
+        listTasks($db);
     }
 }

@@ -1,20 +1,22 @@
 // Add task input
-document.addEventListener('htmx:load', () => {
 
-    const input = document.getElementById("task-input");
-    input.addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-            document.getElementById("add-button").click();
-        }
-    })
-    const taskButton = document.getElementById("add-button");
-    taskButton.addEventListener("click", () => {
-        document.getElementById("task-input").value = "";
-    })
-})
+export function taskInput() {
+    document.addEventListener('htmx:load', () => {
+        const taskButton = document.getElementById("add-button");
+        const input = document.getElementById("task-input");
+        input.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                taskButton.click();
+            }
+        })
 
-const taskButton = document.getElementById("add-button");
-const tasksList = document.getElementById("tasks-list");
-taskButton.addEventListener('htmx:beforeRequest', () => {
-    tasksList.innerHTML="";
-})
+        taskButton.addEventListener("click", () => {
+            document.getElementById("task-input").value = "";
+        })
+
+        const tasksList = document.getElementById("tasks-list");
+        taskButton.addEventListener('htmx:beforeRequest', () => {
+            tasksList.innerHTML = "";
+        })
+    })
+}

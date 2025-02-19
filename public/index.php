@@ -108,15 +108,7 @@ require_once('main.php');
     </div>
 </div>
 
-<script src="assets/js/user-infos.js"></script>
-<script src="assets/js/date.js"></script>
-<script src="assets/js/dad-joke.js"></script>
-<script src="assets/js/background.js"></script>
-<script src="assets/js/prevent-welcome.js"></script>
-<script src="assets/js/add-input.js"></script>
-<script src="assets/js/task-done.js"></script>
-<script src="assets/js/delete-tasks.js"></script>
-<script src="assets/js/task-update.js"></script>
+<script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
 

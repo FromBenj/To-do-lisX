@@ -34,9 +34,9 @@ function listTasks($db)
                 <button
                     id="update-button-' . $taskItem['id'] . '"
                     class="update-button"
-                    hx-target="#task-in-list-' . $taskItem['id'] . '"
+                    hx-target="#tasks-list"
                     hx-vals=\'js:{update_id:' . $taskItem['id'] . ', update_content: document.getElementById("update-' . $taskItem['id'] . '").value}\'
-                    hx-put="main.php"
+                    hx-post="main.php"
                     hx-trigger="click"
                     hx-swap="innerHTML"
                     >
