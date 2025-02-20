@@ -5,7 +5,7 @@ function listTasks($db)
         $results = $db->query('SELECT * FROM task ORDER BY id DESC');
         while ($taskItem = $results->fetchArray(SQLITE3_ASSOC)) {
             echo '
-            <div id="task-container-' . $taskItem['id'] . '"  class="container d-flex justify-content-center align-items-center">
+            <div id="task-container-' . $taskItem['id'] . '"  class="task-container container d-flex justify-content-center align-items-center">
                 <div
                     id="task-in-list-' . $taskItem['id'] . '"
                     class="task-in-list"
