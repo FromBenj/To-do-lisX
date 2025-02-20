@@ -179,16 +179,22 @@ body {
 }
 
 /*Task done*/
-.task-done, .delete-task, .update-done{
+.task-done {
+    background-color: var(--main-green-color);
+    color: white;
+    text-decoration: line-through;
+}
+
+.task-done-icon, .delete-task-icon{
     transition: transform 0.3s;
     cursor: pointer;
 }
 
-.task-done:hover, .delete-task:hover, .update-done:hover {
+.task-done-icon:hover, .delete-task-icon:hover{
     transform: scale(1.5);
 }
 
-.task-done {
+.task-done-icon {
     color: var(--main-green-color);
 }
 

@@ -18,7 +18,7 @@ function listTasks($db)
                 <button
                 id="done-button-' . $taskItem['id'] . '"
                 class="done-button">
-                    <i class="task-done fa-solid fa-check ms-4 me-3"></i>
+                    <i class="task-done-icon fa-solid fa-check ms-4 me-3"></i>
                 </button>
                 <button
                 id="delete-button-' . $taskItem['id'] . '"
@@ -29,7 +29,7 @@ function listTasks($db)
                 hx-trigger="click"
                 hx-swap="outerHTML"
                 >
-                    <i class="delete-task fa-solid fa-trash-can"></i>
+                    <i class="delete-task-icon fa-solid fa-trash-can"></i>
                 </button>
                 <button
                     id="update-button-' . $taskItem['id'] . '"

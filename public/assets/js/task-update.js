@@ -35,7 +35,6 @@ export function taskUpdate() {
         if (event.key === "Enter") {
             tasksInList.forEach( task => {
                 if (task.classList.contains("clicked")) {
-                    console.log(task);
                     updateAction(task);
                 }
             })

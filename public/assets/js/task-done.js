@@ -1,21 +1,21 @@
 export function taskDone() {
 // Task done
-
     const taskContainers = document.querySelectorAll('.task-container');
     taskContainers.forEach(taskContainer => {
         let doneButton;
         let task;
-        Array.from(taskContainer.children).forEach(child => {
+        [...taskContainer.children].forEach( child => {
             if (child.classList.contains("done-button")) {
                 doneButton = child;
-                console.log("yes done button")
             } else if (child.classList.contains("task-in-list")) {
                 task = child;
             }
         })
         if (doneButton && task) {
             doneButton.addEventListener('click', () => {
-
+                task.classList.add("task-done");
+                const doneIcon = doneButton.querySelector(".task-done-icon");
+                doneIcon.classList.replace("fa-check", "fa-thumbs-up");
             })
         }
     })
