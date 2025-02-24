@@ -10,7 +10,8 @@ function getDatabase()
         $db->exec('
             CREATE TABLE IF NOT EXISTS task (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                taskContent TEXT NOT NULL
+                taskContent TEXT NOT NULL,
+                done INTEGER
             )
         ');
         return $db;

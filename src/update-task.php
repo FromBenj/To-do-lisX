@@ -26,11 +26,26 @@ function updateTask($db)
         if (isset($_POST['update_id'], $_POST['update_content']) && $_POST['update_content'] !== '') {
             $updateId = $_POST['update_id'];
             $updateContent = $_POST['update_content'];
-            $updateTask = $db->prepare("UPDATE task SET taskContent = :updateContent WHERE id = :id");
+            $updateTask = $db->prepare("UPDATE task SET taskContent = :updateContent, done = :done WHERE id = :id");
             $updateTask->bindValue(':id', $updateId);
+            $updateTask->bindValue(':done', 0);
             $updateTask->bindValue(':updateContent', $updateContent);
             $updateTask->execute();
         }
         listTasks($db);
+    }
+
+    if (isset($_POST['update_id']) && !$_POST['update_content']) {
+        $updateId = $_POST['update_id'];
+        $task = $db->prepare("SELECT * FROM task WHERE id = :id");
+        $task->bindValue(':id', $updateId);
+        $result = $task->execute();
+        $task = $result->fetchArray(SQLITE3_ASSOC);
+        $done = (int) $task['done'];
+        $newDone = ($done === 0) ? 1 : 0;
+        $updateTask = $db->prepare("UPDATE task SET done = :done WHERE id = :id");
+        $updateTask->bindValue(':id', $updateId);
+        $updateTask->bindValue(':done', $newDone);
+        $updateTask->execute();
     }
 }

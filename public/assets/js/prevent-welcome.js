@@ -13,4 +13,3 @@ export function preventWelcomePage()
         toDoPage.classList.remove("d-none");
     }
 }
-
